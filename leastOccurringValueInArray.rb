@@ -23,7 +23,13 @@ def leastOccuringValueInArray arr
 			if minOccursCounter <= 2
 				return arr[0]	
 			else
-				return false
+				arrUniq.each do | currentValue |
+					if arr.count(currentValue) == 1
+						return currentValue
+					else
+						# store cunt and value
+					end
+				end
 			end
 		end
 	end
