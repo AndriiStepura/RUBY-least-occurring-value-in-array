@@ -14,7 +14,13 @@ def leastOccuringValueInArray arr
 	if arr.empty?
 		return "array is empty"
 	else
-		return false
+		arrUniq = arr.uniq
+		# if (arrUniq.all? &:nil?) - was a wrong way, failed test #16, better for both 16 && 17 this trick:
+		if (arrUniq.all? {|i| i.nil? or i == ""})
+			return "array without not-nil values"	
+		else 
+			return false
+		end
 	end
 end
 
