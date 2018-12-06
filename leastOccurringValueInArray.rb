@@ -28,9 +28,14 @@ def leastOccuringValueInArray arr
 					if arr.count(currentValue) == 1
 						return currentValue
 					else
-						# store cunt and value
+						if arr.count(currentValue) < minOccursCounter
+							minOccursValue = currentValue
+							minOccursCounter = arr.count(currentValue)
+						end
 					end
 				end
+				
+				return minOccursValue
 			end
 		end
 	end
