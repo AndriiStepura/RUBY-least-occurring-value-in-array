@@ -71,8 +71,8 @@ testHelper(["b", "c","a","c","a","b"], "Test Happy #7, Positive with twice first
 testHelper(["b", "c","a","b","c","a","b"], "Test Happy #8, Positive with twice not first value", "c")
 
 # Verify that nil ignored when count REQ#2
-testHelper(["", "c","a","a","c","a"], "Test Happy #9, Positive nil vales ignored (REQ#2)", "c")
-testHelper(["c","","c","","a","c","a"], "Test Happy #10, Positive nil vales ignored (REQ#2)", "a")
+testHelper(["", "c","a","a","c","a"], "Test Happy #9, Positive nil values ignored (REQ#2)", "c")
+testHelper(["c","","c","","a","c","a"], "Test Happy #10, Positive nil values ignored (REQ#2)", "a")
 
 # Verify that non-string values are also counted REQ#3
 # booleans
