@@ -11,7 +11,11 @@ puts ""
 
 # My function for return least occurring value in array
 def leastOccuringValueInArray arr
-	return false
+	if arr.empty?
+		return "array is empty"
+	else
+		return false
+	end
 end
 
 
