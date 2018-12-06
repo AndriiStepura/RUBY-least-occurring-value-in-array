@@ -4,8 +4,8 @@ puts "write a function that takes an input array, and will return least occurrin
 100.times do print "*" end
 puts ""
 print "REQ#1: additional requirement - when same count for more than one value, return first. \n"
-print "REQ#2: additional requirement - ignore nil values, count just character/string values. \n"
-print "REQ#3: additional requirement - not string values, except nil count too. \n"
+print "REQ#2: additional requirement - ignore nil and empty values, count just character/string values. \n"
+print "REQ#3: additional requirement - not string values (except REQ#2 nil & "") must counted too. \n"())
 100.times do print "=" end
 puts ""
 
@@ -16,6 +16,7 @@ def leastOccuringValueInArray arr
 	else
 		arrUniq = arr.uniq
 		arr.delete("") # REQ#2
+		
 		Integer minOccursCounter = arr.count
 		minOccursValue = arr.first
 		# if (arrUniq.all? &:nil?) - was a wrong way, failed test #16, better for both 16 && 17 this trick:
@@ -46,7 +47,7 @@ end
 # Test helper for print tests results
 def testHelper arr, description, expected
 	result = leastOccuringValueInArray(arr)
-	String resultType = leastOccuringValueInArray(arr).class
+	String resultType = result.class
 	 
 	String testStatus = "Failed"
 	if (leastOccuringValueInArray(arr).class == expected.class)
@@ -86,6 +87,8 @@ testHelper([2,1,2,2,1], "Test Happy #14, Positive non-string values are also cou
 # Increase test coverage with negative cases
 # Empty array
 testHelper([], "Test Error #15, Empty array", "array is empty")
+testHelper([""], "Test Error #16, Array with empty value", "array is empty")
+testHelper(["", "", "",], "Test Error #17, Array with empty values", "array is empty")
+
 # Array with just nil values 
-testHelper([""], "Test Error #16, Array with one nil value", "array without not-nil values")
-testHelper(Array.new(3), "Test Error #17, Array with just nil values", "array without not-nil values")
+testHelper(Array.new(3), "Test Error #18, Array with just nil values", "array without not-nil values")
