@@ -80,8 +80,8 @@ testHelper(["c","","c","","a","c","a"], "Test Happy #10, Positive nil values ign
 testHelper([false,"c",false,true,"c","c"], "Test Happy #11, Positive non-string values are also counted - booleans (REQ#3)", true)
 testHelper(["true",true,"true",false], "Test Happy #12, Positive non-string values are also counted - booleans (REQ#3)", true)
 # int
-testHelper([1,"1","1",2,1,2,2,"1"], "Test Happy #13, Positive non-string values are also counted - int first (REQ#3)", true)
-testHelper([false,1,2,2,1,1], "Test Happy #14, Positive non-string values are also counted - int not first (REQ#3)", 2)
+testHelper([1,"1","1",2,1,2,2,"1"], "Test Happy #13, Positive non-string values are also counted - int first (REQ#3)", 1)
+testHelper([2,1,2,2,1], "Test Happy #14, Positive non-string values are also counted - int not first (REQ#3)", 1)
 
 # Increase test coverage with negative cases
 # Empty array
