@@ -15,6 +15,7 @@ def leastOccuringValueInArray arr
 		return "array is empty"
 	else
 		arrUniq = arr.uniq
+		arr.delete("") # REQ#2
 		Integer minOccursCounter = arr.count
 		minOccursValue = arr.first
 		# if (arrUniq.all? &:nil?) - was a wrong way, failed test #16, better for both 16 && 17 this trick:
