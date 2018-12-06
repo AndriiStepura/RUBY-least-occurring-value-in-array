@@ -16,12 +16,13 @@ def leastOccuringValueInArray arr
 	else
 		arrUniq = arr.uniq
 		Integer minOccursCounter = arr.count
+		minOccursValue = arr.first
 		# if (arrUniq.all? &:nil?) - was a wrong way, failed test #16, better for both 16 && 17 this trick:
 		if (arrUniq.all? {|i| i.nil? or i == ""})
 			return "array without not-nil values"	
 		else
 			if minOccursCounter <= 2
-				return arr[0]	
+				return minOccursValue	
 			else
 				arrUniq.each do | currentValue |
 					if arr.count(currentValue) == 1
