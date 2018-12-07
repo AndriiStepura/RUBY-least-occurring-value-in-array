@@ -5,7 +5,7 @@ puts "write a function that takes an input array, and will return least occurrin
 puts ""
 print "REQ#1: additional requirement - when same count for more than one value, return first. \n"
 print "REQ#2: additional requirement - ignore nil and empty values, count just character/string values. \n"
-print "REQ#3: additional requirement - not string values (except REQ#2 nil & "") must counted too. \n"())
+print "REQ#3: additional requirement - not string values (except REQ#2 nil & "") must counted too. \n"
 100.times do print "=" end
 puts ""
 
